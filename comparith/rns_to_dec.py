@@ -86,5 +86,5 @@ if(udecimal > total_reps_pos):
     #decimal = decimal - total_reps_pos
     sdecimal = udecimal - total_reps
 
-print ("Sum: %d, Signed Decimal: %d" % (sum, sdecimal))
+#print ("Sum: %d, Signed Decimal: %d" % (sum, sdecimal))
 print ("Unsigned Decimal: %d, Signed Decimal: %d" % (udecimal, sdecimal))
