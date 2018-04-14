@@ -77,7 +77,7 @@ decimal = sum%total_reps
 #print("raw", decimal)
 
 #to get the negative number
-if(decimal >= total_reps_pos):
+if(decimal > total_reps_pos):
     #decimal = decimal - total_reps_pos
     decimal = decimal - total_reps
 
