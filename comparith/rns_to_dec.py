@@ -40,16 +40,18 @@ if(total_reps %2 == 0):
 
 print("Input RNS Number: ",rns_in)
 print("Input RNS Base: ",rns_base)
-print("Total RNS Rep: -%d to %d" % (total_reps_neg, total_reps_pos))
+print("Total Unsigned Decimal Rep: 0 to %d" % (total_reps-1))
+print("Total Signed Decimal Rep: -%d to %d" % (total_reps_neg, total_reps_pos))
 
 sum = 0
+residues = []
 
 for i in range(no_div_index):
     rns_in_cpy = list(rns_in)
-    residue = rns_in_cpy.pop(i)
+    multplier = rns_in_cpy.pop(i)
 
     #print(rns_in_cpy)
-    #print(residue)
+    #print(multplier)
 
     rns_base_cpy = list(rns_base)
     mod = rns_base_cpy.pop(i)
@@ -69,17 +71,20 @@ for i in range(no_div_index):
         else:
             n = n+1
 
-    sum = sum + num*residue
+    sum = sum + num*multplier
+    residues.append(num)
 
-    print ("location : %d, mul: %d, val: %d" % (i,num,num*residue))
+    #print ("location : %d, mul: %d, val: %d" % (i,num,num*multplier))
 
-decimal = sum%total_reps
+print("Residues: ", residues)
+
+udecimal = sum%total_reps
 #print("raw", decimal)
 
 #to get the negative number
-if(decimal > total_reps_pos):
+if(udecimal > total_reps_pos):
     #decimal = decimal - total_reps_pos
-    decimal = decimal - total_reps
+    sdecimal = udecimal - total_reps
 
-#print ("Sum is %d, Decimal is %d" % (sum, decimal))
-print ("Decimal is %d" % (decimal))
+print ("Sum: %d, Signed Decimal: %d" % (sum, sdecimal))
+print ("Unsigned Decimal: %d, Signed Decimal: %d" % (udecimal, sdecimal))
