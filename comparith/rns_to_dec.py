@@ -81,6 +81,7 @@ print("Residues: ", residues)
 udecimal = sum%total_reps
 #print("raw", decimal)
 
+sdecimal = udecimal
 #to get the negative number
 if(udecimal > total_reps_pos):
     #decimal = decimal - total_reps_pos
